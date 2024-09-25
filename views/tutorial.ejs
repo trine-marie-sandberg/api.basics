@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+      <h2 class="p-3">Tutorials</h2>
+      <div class="list-group">
+        <% tutorials.forEach(function(tutorial) { %>
+          <div class="row px-3 py-1 w-100">
+            <div class="col py-1 bg-info">
+                <%=tutorial.title%>
+            </div>
+            <div class="col py-1 bg-info">
+                <%=tutorial.description%>
+            </div>
+            <div class="col py-1 bg-info">
+                <input type="checkbox" id="Published" name="Published"
+                <%= tutorial.published ?'checked':'unchecked'%> disabled >
+                <label for="Published">Published</label>
+            </div>
+        </div>
+        <% }); %>
+      </div>
+  </body>
+</html>
