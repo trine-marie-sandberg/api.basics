@@ -9,5 +9,9 @@ router.get('/', async function(req, res, next) {
   const tutorials = await tutorialService.getAll();
   res.render('tutorial', {tutorials: tutorials});
 });
+router.get('/', function(req, res, next) {
+  console.log(req.query)
+  res.render('index', { title: 'Express' });
+});
 
 module.exports = router;
