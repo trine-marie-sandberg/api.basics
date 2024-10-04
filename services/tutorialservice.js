@@ -4,9 +4,9 @@ class TutorialService {
         this.tutorial = db.tutorial;
     }
 
-    async getAll() {
+    async getAll(condition) {
         return this.tutorial.findAll({
-            where: {}
+            where: condition
         }).catch(function (err) {
             console.log(err);
         });
